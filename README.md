@@ -2,6 +2,10 @@
 
 A simple Python agent framework that connects to a local LLM (via LM Studio/OpenAI API) and can call custom Python tools/functions based on LLM output. The agent interprets LLM responses, detects tool calls, executes them, and streams or returns the final answer.
 
+⚠️ **NOTE: This project is in active development** ⚠️
+
+Some or all of the features may be incomplete or not working. Feel free to submit PRs to help me build!
+
 ## Features
 
 - Connects to a local LLM server (e.g., LM Studio)
