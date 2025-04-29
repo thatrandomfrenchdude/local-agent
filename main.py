@@ -4,6 +4,7 @@ from src.agent import Agent
 from src.tools import tools, tool_descriptions
 
 # Set the model you want to use
+# An instruct model is recommended for tool use, performance may degrade with chat models
 MODEL = "hugging-quants/llama-3.2-3b-instruct"
 
 def main():
@@ -13,7 +14,7 @@ def main():
         f"{tool_descriptions}\n"
         "If no tool is needed, respond with the final answer."
     )
-    # Create the agent
+
     agent = Agent(
         model=MODEL,
         tools=tools,
