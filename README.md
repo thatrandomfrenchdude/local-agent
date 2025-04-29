@@ -108,8 +108,16 @@ my_tool_obj = Tool(
 
 ```python
 tools = [
-    Tool("Echo", echo_tool, "Prints the input text prefixed with ECHO. Usage: Echo(text)"),
-    Tool("Time", time_tool, "Prints the current date and time. Usage: Time()"),
+    Tool(
+        "Echo",
+        echo_tool,
+        "Prints the input text prefixed with ECHO. Usage: return the string 'Echo(<text>)' where <text> is the text to echo."
+    ),
+    Tool(
+        "Time",
+        time_tool,
+        "Prints the current date and time. Usage: return the string 'Time()'"
+    ),
     my_tool_obj,  # Add your tool here
 ]
 ```
