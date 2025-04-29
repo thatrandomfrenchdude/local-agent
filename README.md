@@ -8,8 +8,6 @@ A simple Python agent framework that connects to a local LLM (via LM Studio/Open
 - [Setup Instructions](#setup-instructions)
 - [Usage](#usage)
 - [Adding More Tools](#adding-more-tools)
-- [How Tool Calls Work](#how-tool-calls-work)
-- [Example Tool Call](#example-tool-call)
 - [Contributing](#contributing)
 - [License](#license)
 
