@@ -1,7 +1,5 @@
 from datetime import datetime
 from typing import Callable
-import os
-import requests
 
 class Tool:
     def __init__(self, name: str, func: Callable[[str], str], description: str):

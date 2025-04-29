@@ -51,7 +51,7 @@ Some or all of the features may be incomplete or not working. Feel free to submi
 4. **Install Dependencies**
 
    ```sh
-   pip install openai requests
+   pip install openai
    ```
 
 ---
@@ -60,9 +60,9 @@ Some or all of the features may be incomplete or not working. Feel free to submi
 
 1. **Start LM Studio** (or another OpenAI-compatible API server) on your machine.
 
-2. **Edit the model path** in `main.py` if needed:
+2. **Edit the model name** in `main.py` if needed:
    ```python
-   model="DeepSeek-R1-Distill-Llama-8B-GGUF/DeepSeek-R1-Distill-Llama-8B-Q8_0.gguf"
+   MODEL = "hugging-quants/llama-3.2-3b-instruct"
    ```
 
 3. **Run the script:**
@@ -72,14 +72,11 @@ Some or all of the features may be incomplete or not working. Feel free to submi
 
    Example output:
    ```
-   Agent result: ECHO: ‘hello world’
+   Agent result: The current time is 2024-06-01 12:34:56
    ```
 
-4. **To stream the final response instead of printing it all at once:**
-   Uncomment the streaming example at the bottom of `main.py`:
-   ```python
-   # asyncio.run(agent.run("What time is it?", stream=True))
-   ```
+4. **To run with different user input:**
+   Edit the `asyncio.run(agent.run(...))` line in `main.py` with your prompt.
 
 ---
 
@@ -98,6 +95,8 @@ def my_tool(arg: str) -> str:
 ### 2. Create a `Tool` object
 
 ```python
+from src.tools import Tool
+
 my_tool_obj = Tool(
     "MyTool",
     my_tool,
@@ -109,8 +108,8 @@ my_tool_obj = Tool(
 
 ```python
 tools = [
-    Tool("Echo", echo_tool, "Returns the input text prefixed with ECHO. Usage: Echo(text)"),
-    Tool("Time", time_tool, "Returns the current date and time. Usage: Time()"),
+    Tool("Echo", echo_tool, "Prints the input text prefixed with ECHO. Usage: Echo(text)"),
+    Tool("Time", time_tool, "Prints the current date and time. Usage: Time()"),
     my_tool_obj,  # Add your tool here
 ]
 ```
