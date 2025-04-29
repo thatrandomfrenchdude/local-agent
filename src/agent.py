@@ -22,8 +22,6 @@ class Agent:
             {"role": "system", "content": self.instructions},
             {"role": "user", "content": user_input}
         ]
-
-        # final_response = None
         tool_call_pattern = re.compile(r"^(\w+)\((.*)\)$", re.DOTALL)
 
         # call the model with the initial request

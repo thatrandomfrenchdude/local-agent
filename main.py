@@ -4,7 +4,6 @@ from src.agent import Agent
 from src.tools import tools, tool_descriptions
 
 # Set the model you want to use
-# MODEL = "DeepSeek-R1-Distill-Llama-8B-GGUF/DeepSeek-R1-Distill-Llama-8B-Q8_0.gguf"
 MODEL = "hugging-quants/llama-3.2-3b-instruct"
 
 def main():

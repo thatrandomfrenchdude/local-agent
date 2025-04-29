@@ -17,12 +17,12 @@ def chat_completion(
 ) -> Any:
     """Send messages to the language model and get a response."""
     if stream:
-        # For streaming responses (returns an async generator)
         return client.chat.completions.acreate(
             model=model, messages=messages,
             temperature=temperature, stream=True
         )
-    # For normal responses
+    
+    # Non-streaming response
     resp = client.chat.completions.create(
         model=model, messages=messages, temperature=temperature
     )
