@@ -10,9 +10,11 @@ class Tool:
     def run(self, arg: str) -> str:
         return self.func(arg) if arg != "" else self.func()
 
+# Example prompt to use the echo tool: "Please echo ‘hello world’"
 def echo_tool(text: str) -> str:
     return f"Echo: {text}"
 
+# Example prompt to us the time tool: "What time is it?"
 def time_tool() -> str:
     now = datetime.now()
     return f"The current time is {now.strftime('%Y-%m-%d %H:%M:%S')}"
