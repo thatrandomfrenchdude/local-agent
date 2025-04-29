@@ -149,28 +149,6 @@ The script will automatically include your tool in the agent's instructions.
 
 ---
 
-## How Tool Calls Work
-
-- The LLM is instructed to call tools by responding with `ToolName(argument)`.
-- The agent detects this pattern, runs the corresponding Python function, and feeds the result back to the LLM.
-- If the LLM responds with a normal answer (not a tool call), the agent returns or streams it to the user.
-
----
-
-## Example Tool Call
-
-If the user asks:  
-```
-What time is it?
-```
-The LLM may respond with:  
-```
-Time()
-```
-The agent runs the `time_tool` and returns the current time.
-
----
-
 ## Contributing
 I welcome contributions! Please follow these steps:
 1. Fork the repository.
@@ -178,5 +156,9 @@ I welcome contributions! Please follow these steps:
 3. Make your changes, commit them, and push to your branch.
 4. Create a pull request explaining your changes.
 
+---
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
