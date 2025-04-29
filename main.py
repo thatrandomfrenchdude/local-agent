@@ -20,13 +20,14 @@ def main():
         instructions=instructions
     )
 
-    # # Run the agent with some user input (normal output)
-    # result = asyncio.run(agent.run("Please echo ‘hello world’."))
-
-    # Example: Run the agent with streaming output
-    result = asyncio.run(agent.run("What time is it?"))
-
-    print("Agent result:", result)
+    print("Type 'exit' or 'quit' to end the chat.")
+    while True:
+        user_input = input("You: ").strip()
+        if user_input.lower() in {"exit", "quit"}:
+            print("Goodbye!")
+            break
+        result = asyncio.run(agent.run(user_input))
+        print(f"Agent: {result}")
 
 if __name__ == "__main__":
     main()

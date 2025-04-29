@@ -11,7 +11,7 @@ class Tool:
         return self.func(arg) if arg != "" else self.func()
 
 def echo_tool(text: str) -> str:
-    return f"ECHO: {text}"
+    return f"Echo: {text}"
 
 def time_tool() -> str:
     now = datetime.now()
@@ -22,12 +22,12 @@ tools = [
     Tool(
         "Echo",
         echo_tool,
-        "Prints the input text prefixed with ECHO. Usage: return the string 'Echo(<text>)' where <text> is the text to echo."
+        "Prints the input text prefixed with Echo. Usage: return 'Echo(<text>)' where <text> is the text to echo."
     ),
     Tool(
         "Time",
         time_tool,
-        "Prints the current date and time. Usage: return the string 'Time()'"
+        "Prints the current date and time. Usage: return 'Time()'"
     )
 ]
 # Build tool descriptions for the instructions
