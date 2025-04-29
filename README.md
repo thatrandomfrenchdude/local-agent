@@ -14,9 +14,8 @@ A simple Python agent framework that connects to a local LLM (via LM Studio/Open
 ## Features
 
 - Connects to a local LLM server (e.g., LM Studio)
-- Supports multi-turn tool use and reasoning
+- Supports tool use to expand LLM capabilities
 - Easily extensible with custom tools
-- Optionally streams the final response to the user
 
 ---
 
