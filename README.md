@@ -2,9 +2,16 @@
 
 A simple Python agent framework that connects to a local LLM (via LM Studio/OpenAI API) and can call custom Python tools/functions based on LLM output. The agent interprets LLM responses, detects tool calls, executes them, and streams or returns the final answer.
 
-⚠️ **NOTE: This project is in active development** ⚠️
-
-Some or all of the features may be incomplete or not working. Feel free to submit PRs to help me build!
+## Table of Contents
+- [Features](#features)
+- [Requirements](#requirements)
+- [Setup Instructions](#setup-instructions)
+- [Usage](#usage)
+- [Adding More Tools](#adding-more-tools)
+- [How Tool Calls Work](#how-tool-calls-work)
+- [Example Tool Call](#example-tool-call)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
@@ -163,3 +170,13 @@ Time()
 The agent runs the `time_tool` and returns the current time.
 
 ---
+
+## Contributing
+I welcome contributions! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes, commit them, and push to your branch.
+4. Create a pull request explaining your changes.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
