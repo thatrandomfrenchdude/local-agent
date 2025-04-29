@@ -10,8 +10,13 @@ class Agent:
         tools: List[Tool],
         instructions: str
     ):
+        # model used by the agent
         self.model = model
+
+        # tools available to the agent
         self.tools = {tool.name: tool for tool in tools}
+
+        # system instructions for the agent
         self.instructions = instructions
 
     async def run(
