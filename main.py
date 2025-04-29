@@ -1,17 +1,15 @@
 import asyncio
 
 from src.agent import Agent
-from src.model import chat_completion
-from src.tools import tools, Tool, tool_descriptions
+from src.tools import tools, tool_descriptions
 
-# --- USER CONFIGURATION ---
 # Set the model you want to use
-MODEL = "DeepSeek-R1-Distill-Llama-8B-GGUF/DeepSeek-R1-Distill-Llama-8B-Q8_0.gguf"
+# MODEL = "DeepSeek-R1-Distill-Llama-8B-GGUF/DeepSeek-R1-Distill-Llama-8B-Q8_0.gguf"
+MODEL = "hugging-quants/llama-3.2-3b-instruct"
 
 def main():
-    # Instructions for the agent, including tool references
     instructions = (
-        "You are an agent that may call tools by responding with TOOL_NAME(argument).\n"
+        "You are a tool-calling agent that may use the following tools by responding according to their instructions.\n"
         "Available tools:\n"
         f"{tool_descriptions}\n"
         "If no tool is needed, respond with the final answer."
@@ -23,12 +21,12 @@ def main():
         instructions=instructions
     )
 
-    # Run the agent with some user input (normal output)
-    result = asyncio.run(agent.run("Please echo ‘hello world’."))
-    print("Agent result:", result)
+    # # Run the agent with some user input (normal output)
+    # result = asyncio.run(agent.run("Please echo ‘hello world’."))
+    # print("Agent result:", result)
 
-    # # Example: Run the agent with streaming output
-    # asyncio.run(agent.run("What time is it?", stream=True))
+    # Example: Run the agent with streaming output
+    asyncio.run(agent.run("What time is it?"))
 
 if __name__ == "__main__":
     main()

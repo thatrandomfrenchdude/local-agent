@@ -1,5 +1,7 @@
 from datetime import datetime
 from typing import Callable
+import os
+import requests
 
 class Tool:
     def __init__(self, name: str, func: Callable[[str], str], description: str):
@@ -13,14 +15,22 @@ class Tool:
 def echo_tool(text: str) -> str:
     return f"ECHO: {text}"
 
-def time_tool(_: str) -> str:
+def time_tool() -> str:
     now = datetime.now()
     return f"The current time is {now.strftime('%Y-%m-%d %H:%M:%S')}"
 
 # Define available tools
 tools = [
-    Tool("Echo", echo_tool, "Returns the input text prefixed with ECHO. Usage: Echo(text)"),
-    Tool("Time", time_tool, "Returns the current date and time. Usage: Time()"),
+    Tool(
+        "Echo",
+        echo_tool,
+        "Prints the input text prefixed with ECHO. Usage: return the string 'Echo(<text>)' where <text> is the text to echo."
+    ),
+    Tool(
+        "Time",
+        time_tool,
+        "Prints the current date and time. Usage: return the string 'Time()'"
+    )
 ]
 # Build tool descriptions for the instructions
 tool_descriptions = "\n".join(

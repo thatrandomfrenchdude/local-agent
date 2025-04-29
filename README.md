@@ -51,7 +51,7 @@ Some or all of the features may be incomplete or not working. Feel free to submi
 4. **Install Dependencies**
 
    ```sh
-   pip install openai
+   pip install openai requests
    ```
 
 ---
