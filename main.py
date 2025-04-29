@@ -23,10 +23,11 @@ def main():
 
     # # Run the agent with some user input (normal output)
     # result = asyncio.run(agent.run("Please echo ‘hello world’."))
-    # print("Agent result:", result)
 
     # Example: Run the agent with streaming output
-    asyncio.run(agent.run("What time is it?"))
+    result = asyncio.run(agent.run("What time is it?"))
+
+    print("Agent result:", result)
 
 if __name__ == "__main__":
     main()

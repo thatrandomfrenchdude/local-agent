@@ -10,7 +10,7 @@ class Tool:
         self.description = description
 
     def run(self, arg: str) -> str:
-        return self.func(arg)
+        return self.func(arg) if arg != "" else self.func()
 
 def echo_tool(text: str) -> str:
     return f"ECHO: {text}"

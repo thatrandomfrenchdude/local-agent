@@ -8,13 +8,11 @@ class Agent:
         self,
         model: str,
         tools: List[Tool],
-        instructions: str,
-        max_turns: int = 1
+        instructions: str
     ):
         self.model = model
         self.tools = {tool.name: tool for tool in tools}
         self.instructions = instructions
-        self.max_turns = max_turns
 
     async def run(
         self,
@@ -28,13 +26,12 @@ class Agent:
         # final_response = None
         tool_call_pattern = re.compile(r"^(\w+)\((.*)\)$", re.DOTALL)
 
-        # for _ in range(self.max_turns):
         # call the model with the initial request
         response = chat_completion(self.model, history)
         
         # check the output for a response
         match = tool_call_pattern.match(response.strip())
-        print(match, response.strip())
+        
         if match:
             name, arg = match.groups()
             tool = self.tools.get(name)
@@ -43,10 +40,8 @@ class Agent:
                 result = tool.run(arg) if arg else tool.run("")
                 history.append({"role": "assistant", "content": response})
                 history.append({"role": "tool", "content": result})
-                continue # Ask LLM again with updated history
-            # Not a tool call: treat as final answer and break
-            # final_response = response
-
-        # if final_response is not None:
-        #     return final_response
-        return "⚠️ Max turns exceeded."
+                return result.strip()
+        else:
+            # Not a tool call: treat as final answer
+            history.append({"role": "assistant", "content": response})
+            return response.strip()
