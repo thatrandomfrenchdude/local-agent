@@ -31,6 +31,7 @@ class Agent:
         match = tool_call_pattern.match(response.strip())
         
         if match:
+            # call tool if a tool call is found
             name, arg = match.groups()
             tool = self.tools.get(name)
             if tool:
