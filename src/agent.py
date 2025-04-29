@@ -1,17 +1,17 @@
 import re
 from typing import List
-from src.model import chat_completion, Message
+from src.model import ModelInterface
 from src.tools import Tool
 
 class Agent:
     def __init__(
         self,
-        model: str,
+        # model: str,
         tools: List[Tool],
         instructions: str
     ):
         # model used by the agent
-        self.model = model
+        self.model = ModelInterface()
 
         # tools available to the agent
         self.tools = {tool.name: tool for tool in tools}
@@ -23,14 +23,14 @@ class Agent:
         self,
         user_input: str,
     ) -> str:
-        history: List[Message] = [
+        history = [
             {"role": "system", "content": self.instructions},
             {"role": "user", "content": user_input}
         ]
         tool_call_pattern = re.compile(r"^(\w+)\((.*)\)$", re.DOTALL)
 
         # call the model with the initial request
-        response = chat_completion(self.model, history)
+        response = self.model.chat_completion(history)
         
         # check the output for a response
         match = tool_call_pattern.match(response.strip())

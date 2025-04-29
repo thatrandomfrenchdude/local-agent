@@ -3,10 +3,6 @@ import asyncio
 from src.agent import Agent
 from src.tools import tools, tool_descriptions
 
-# Set the model you want to use
-# An instruct model is recommended for tool use, performance may degrade with chat models
-MODEL = "hugging-quants/llama-3.2-3b-instruct"
-
 def main():
     instructions = (
         "You are a tool-calling agent that may use the following tools by responding according to their instructions.\n"
@@ -16,7 +12,7 @@ def main():
     )
 
     agent = Agent(
-        model=MODEL,
+        # model=MODEL,
         tools=tools,
         instructions=instructions
     )

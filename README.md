@@ -36,7 +36,21 @@ Some or all of the features may be incomplete or not working. Feel free to submi
    - Once downloaded, click "Run" to start the model server.
    - Make sure the "OpenAI Compatible API" is enabled (check the API tab in LM Studio for the server URL, usually `http://localhost:1234/v1`).
 
-3. **Create and Activate a Virtual Environment**
+3. **Create and Edit the Configuration File**
+
+   Create a file named `config.yaml` in the project root with the following contents (edit values as needed):
+
+   ```yaml
+   MODEL: "hugging-quants/llama-3.2-3b-instruct"
+   LM_STUDIO_URL: "http://localhost:1234/v1"
+   LM_STUDIO_API_KEY: "lm-studio"
+   ```
+
+   - `MODEL`: The model name as shown in LM Studio.
+   - `LM_STUDIO_URL`: The API URL for your LM Studio server.
+   - `LM_STUDIO_API_KEY`: The API key (default for LM Studio is `"lm-studio"`).
+
+4. **Create and Activate a Virtual Environment**
 
    ```sh
    python3 -m venv venv
@@ -48,7 +62,7 @@ Some or all of the features may be incomplete or not working. Feel free to submi
    venv\Scripts\activate
    ```
 
-4. **Install Dependencies**
+5. **Install Dependencies**
 
    ```sh
    pip install openai
@@ -149,3 +163,4 @@ Time()
 The agent runs the `time_tool` and returns the current time.
 
 ---
+````
