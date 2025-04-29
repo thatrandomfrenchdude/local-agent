@@ -32,7 +32,7 @@ Some or all of the features may be incomplete or not working. Feel free to submi
 
 2. **Download and Run a Model in LM Studio**
 
-   - In LM Studio, go to the "Models" tab and download a compatible model (e.g., DeepSeek-R1-Distill-Llama-8B).
+   - In LM Studio, go to the "Models" tab and download a compatible model (e.g., llama-3.2-3b-instruct).
    - Once downloaded, click "Run" to start the model server.
    - Make sure the "OpenAI Compatible API" is enabled (check the API tab in LM Studio for the server URL, usually `http://localhost:1234/v1`).
 
