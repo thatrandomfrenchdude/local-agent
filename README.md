@@ -21,10 +21,38 @@ Some or all of the features may be incomplete or not working. Feel free to submi
 - `openai` Python package
 - A running LM Studio server (or compatible OpenAI API endpoint)
 
-Install dependencies:
-```sh
-pip install openai
-```
+---
+
+## Setup Instructions
+
+1. **Start LM Studio**
+
+   - Download and install [LM Studio](https://lmstudio.ai/) if you haven't already.
+   - Open LM Studio.
+
+2. **Download and Run a Model in LM Studio**
+
+   - In LM Studio, go to the "Models" tab and download a compatible model (e.g., DeepSeek-R1-Distill-Llama-8B).
+   - Once downloaded, click "Run" to start the model server.
+   - Make sure the "OpenAI Compatible API" is enabled (check the API tab in LM Studio for the server URL, usually `http://localhost:1234/v1`).
+
+3. **Create and Activate a Virtual Environment**
+
+   ```sh
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+   On Windows, activate with:
+   ```sh
+   venv\Scripts\activate
+   ```
+
+4. **Install Dependencies**
+
+   ```sh
+   pip install openai
+   ```
 
 ---
 
