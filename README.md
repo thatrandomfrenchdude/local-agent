@@ -1,6 +1,6 @@
 # Local Agent
 
-A simple Python agent framework that connects to a local LLM (via LM Studio/OpenAI API) and can call custom Python tools/functions based on LLM output. The agent interprets LLM responses, detects tool calls, executes them, and streams or returns the final answer.
+A simple Python agent framework that connects to a local LLM (via LM Studio) and can call custom Python tools/functions based on LLM output. The agent interprets LLM responses, detects tool calls, executes them, and returns the final answer.
 
 ## Table of Contents
 - [Features](#features)
