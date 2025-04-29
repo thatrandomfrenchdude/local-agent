@@ -163,4 +163,3 @@ Time()
 The agent runs the `time_tool` and returns the current time.
 
 ---
-````
