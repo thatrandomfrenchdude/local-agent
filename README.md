@@ -69,7 +69,7 @@ A simple Python agent framework that connects to a local LLM (via LM Studio) and
 5. **Install Dependencies**
 
    ```sh
-   pip install openai
+   pip install openai pyyaml
    ```
 
 ---
