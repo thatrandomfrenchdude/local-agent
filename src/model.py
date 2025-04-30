@@ -15,7 +15,7 @@ class ModelInterface:
 
         LM_STUDIO_URL = config.get("LM_STUDIO_URL", "http://localhost:1234/v1")
         LM_STUDIO_API_KEY = config.get("LM_STUDIO_API_KEY", "lm-studio")
-        self. client = OpenAI(base_url=LM_STUDIO_URL, api_key=LM_STUDIO_API_KEY)
+        self.client = OpenAI(base_url=LM_STUDIO_URL, api_key=LM_STUDIO_API_KEY)
 
     def chat_completion(
         self,

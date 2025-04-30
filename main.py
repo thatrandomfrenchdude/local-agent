@@ -12,7 +12,6 @@ def main():
     )
 
     agent = Agent(
-        # model=MODEL,
         tools=tools,
         instructions=instructions
     )
