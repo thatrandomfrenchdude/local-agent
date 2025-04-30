@@ -17,7 +17,7 @@ def echo_tool(text: str) -> str:
 # Example prompt to us the time tool: "What time is it?"
 def time_tool() -> str:
     now = datetime.now()
-    return f"The current time is {now.strftime('%Y-%m-%d %H:%M:%S')}"
+    return f"The current time is {now.strftime('%I:%M%p').lstrip('0').lower()} on {now.strftime('%d %B %Y')}"
 
 # Define available tools
 tools = [
