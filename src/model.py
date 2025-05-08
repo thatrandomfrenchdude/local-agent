@@ -13,7 +13,6 @@ class ModelInterface:
         
         self.model = config.get("MODEL", "hugging-quants/llama-3.2-3b-instruct")
 
-        # API mode
         LM_STUDIO_URL = config.get("LM_STUDIO_URL", "http://localhost:1234/v1")
         LM_STUDIO_API_KEY = config.get("LM_STUDIO_API_KEY", "lm-studio")
         self.client = OpenAI(base_url=LM_STUDIO_URL, api_key=LM_STUDIO_API_KEY)

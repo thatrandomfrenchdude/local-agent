@@ -6,7 +6,6 @@ from src.tools import Tool
 class Agent:
     def __init__(
         self,
-        # model: str,
         tools: List[Tool],
         instructions: str
     ):
