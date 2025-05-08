@@ -78,12 +78,7 @@ A simple Python agent framework that connects to a local LLM (via LM Studio) and
 
 1. **Start LM Studio** (or another OpenAI-compatible API server) on your machine.
 
-2. **Edit the model name** in `main.py` if needed:
-   ```python
-   MODEL = "hugging-quants/llama-3.2-3b-instruct"
-   ```
-
-3. **Run the script:**
+2. **Run the script:**
    ```sh
    python main.py
    ```
@@ -93,7 +88,7 @@ A simple Python agent framework that connects to a local LLM (via LM Studio) and
    Agent result: The current time is 2024-06-01 12:34:56
    ```
 
-4. **To run with different user input:**
+3. **To run with different user input:**
    Edit the `asyncio.run(agent.run(...))` line in `main.py` with your prompt.
 
 ---
