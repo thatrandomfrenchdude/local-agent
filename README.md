@@ -22,7 +22,7 @@ A simple Python agent framework that connects to a local LLM (via LM Studio) and
 ## Requirements
 
 - Python 3.8+
-- `openai` Python package
+- `openai` and `pyyaml` Python packages
 - A running LM Studio server (or compatible OpenAI API endpoint)
 
 ---
